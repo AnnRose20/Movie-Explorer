@@ -27,10 +27,10 @@ SECRET_KEY = os.environ.get("SECRET_KEY", 'django-insecure-cu$p)*d^wh(^(1kyqh*xt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ["*"]
-
-CSRF_TRUSTED_ORIGINS = [
-    "https://movie-explorer-ngxi.onrender.com",
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    ".railway.app",
 ]
 
 
@@ -55,7 +55,6 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 MIDDLEWARE = [
-    'config.middleware.HostDebugMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
