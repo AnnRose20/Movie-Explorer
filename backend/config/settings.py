@@ -30,9 +30,12 @@ DEBUG = os.environ.get("DEBUG", "False") == "True"
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
-    ".railway.app",
+    ".up.railway.app",
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://movie-explorer-production-64ac.up.railway.app",
+]
 
 # Application definition
 
