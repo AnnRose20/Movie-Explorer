@@ -1,6 +1,8 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import {
   getFavorites,
@@ -38,17 +40,35 @@ export function FavoritesProvider({ children }) {
 
   async function toggleFavorite(movie) {
 
-    if (isFavorite(movie.id)) {
+    const token = localStorage.getItem("access");
 
-      await removeFavorite(movie.id);
-
-    } else {
-
-      await addFavorite(movie);
-
+    if (!token) {
+      toast.info("Please sign in or register to add favorites ❤️");
+      return;
     }
 
-    await loadFavorites();
+    try {
+
+      if (isFavorite(movie.id)) {
+
+        await removeFavorite(movie.id);
+        toast.success("Removed from Favorites");
+
+      } else {
+
+        await addFavorite(movie);
+        toast.success("Added to Favorites ❤️");
+
+      }
+
+      await loadFavorites();
+
+    } catch (err) {
+
+      console.error(err);
+      toast.error("Something went wrong.");
+
+    }
 
   }
 
