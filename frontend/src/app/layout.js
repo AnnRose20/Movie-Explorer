@@ -27,16 +27,18 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body>
-        <Navbar />
         <FavoritesProvider>
+          <Navbar />
           {children}
+
+          <ToastContainer
+            position="top-right"
+            autoClose={2500}
+            theme="dark"
+          />
+
         </FavoritesProvider>
 
-        <ToastContainer
-          position="top-right"
-          autoClose={2500}
-          theme="dark"
-        />
 
       </body>
     </html>

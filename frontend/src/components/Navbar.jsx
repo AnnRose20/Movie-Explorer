@@ -5,11 +5,13 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { getProfile } from "@/services/userService";
 import { logout } from "@/services/authService";
+import useFavorites from "@/hooks/useFavorites";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [user, setUser] = useState(null);
   const [showMenu, setShowMenu] = useState(false);
+  const { favorites } = useFavorites();
 
   const menuRef = useRef(null);
 
@@ -88,9 +90,15 @@ export default function Navbar() {
 
           <Link
             href="/favorites"
-            className="transition hover:text-red-500"
+            className="relative flex items-center gap-2 transition hover:text-red-500"
           >
             ❤️ Favorites
+
+            {favorites.length > 0 && (
+              <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-red-500 px-1 text-xs font-semibold text-white">
+                {favorites.length}
+              </span>
+            )}
           </Link>
 
           <Link
@@ -173,9 +181,15 @@ export default function Navbar() {
 
                   <Link
                     href="/favorites"
-                    className="block px-4 py-3 hover:bg-slate-800"
+                    className="flex items-center justify-between px-4 py-3 hover:bg-slate-800"
                   >
-                    ❤️ Favorites
+                    <span>❤️ Favorites</span>
+
+                    {favorites.length > 0 && (
+                      <span className="rounded-full bg-red-500 px-2 py-0.5 text-xs font-semibold text-white">
+                        {favorites.length}
+                      </span>
+                    )}
                   </Link>
 
                   <button
@@ -212,8 +226,18 @@ export default function Navbar() {
             Home
           </Link>
 
-          <Link href="/favorites" onClick={() => setIsOpen(false)}>
-            ❤️ Favorites
+          <Link
+            href="/favorites"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center justify-between"
+          >
+            <span>❤️ Favorites</span>
+
+            {favorites.length > 0 && (
+              <span className="rounded-full bg-red-500 px-2 py-0.5 text-xs font-semibold text-white">
+                {favorites.length}
+              </span>
+            )}
           </Link>
 
           <Link href="/contact" onClick={() => setIsOpen(false)}>
