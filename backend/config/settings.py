@@ -35,6 +35,7 @@ ALLOWED_HOSTS = [
 
 CSRF_TRUSTED_ORIGINS = [
     "https://movie-explorer-production-64ac.up.railway.app",
+    "https://movie-explorer-dun-zeta.vercel.app",
 ]
 
 # Application definition
@@ -55,6 +56,7 @@ INSTALLED_APPS = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+     "https://movie-explorer-dun-zeta.vercel.app",
 ]
 
 MIDDLEWARE = [
