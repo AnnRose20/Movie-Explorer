@@ -1,4 +1,5 @@
-const BASE_URL = "http://127.0.0.1:8000/api/movies";
+//const BASE_URL = "http://127.0.0.1:8000/api/movies";
+const BASE_URL = "https://movie-explorer-production-64ac.up.railway.app/api/movies";
 
 function getToken() {
   return localStorage.getItem("access");
