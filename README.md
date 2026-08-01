@@ -4,70 +4,92 @@ A full-stack Movie Explorer web application built using **Next.js** and **Django
 
 ---
 
+## 🌐 Live Demo
+
+* **Frontend:** https://movie-explorer-dun-zeta.vercel.app
+* **Backend API:** https://movie-explorer-production-64ac.up.railway.app
+
+---
+
 ## ✨ Features
 
 ### Authentication
-- User Registration
-- User Login
-- JWT Authentication
-- User Profile
-- Logout
+
+* User Registration
+* User Login
+* JWT Authentication
+* User Profile
+* Logout
 
 ### Movies
-- Browse Popular Movies
-- Top Rated Movies
-- Upcoming Movies
-- Search Movies
-- Movie Details
-- Movie Trailer
-- Recommended Movies
-- Pagination
+
+* Browse Popular Movies
+* Top Rated Movies
+* Upcoming Movies
+* Search Movies
+* Movie Details
+* Movie Trailer
+* Recommended Movies
+* Pagination
 
 ### Favorites
-- Add to Favorites
-- Remove from Favorites
-- View Favorite Movies
-- User-specific Favorites
+
+* Add to Favorites
+* Remove from Favorites
+* View Favorite Movies
+* User-specific Favorites
 
 ### Contact
-- Contact Form
-- Messages Stored in Database
+
+* Contact Form
+* Messages Stored in Database
 
 ### Responsive Design
-- Desktop
-- Tablet
-- Mobile
+
+* Desktop
+* Tablet
+* Mobile
+
+### Deployment
+
+* Frontend deployed on Vercel
+* Backend deployed on Railway
 
 ---
 
 ## 🛠 Tech Stack
 
 ### Frontend
-- Next.js
-- React
-- Tailwind CSS
-- Lucide React
+
+* Next.js
+* React
+* Tailwind CSS
+* Lucide React
 
 ### Backend
-- Django
-- Django REST Framework
-- Simple JWT
+
+* Django
+* Django REST Framework
+* Simple JWT
 
 ### Database
-- SQLite
+
+* MySQL 
 
 ### API
-- TMDB API
+
+* TMDB API
 
 ### Version Control
-- Git
-- GitHub
+
+* Git
+* GitHub
 
 ---
 
 ## 📁 Project Structure
 
-```
+```text
 Movie-Explorer
 │
 ├── backend
@@ -130,39 +152,28 @@ npm run dev
 
 Create a `.env` file inside the backend directory.
 
-```
-TMDB_API_KEY=YOUR_API_KEY
+```env
+SECRET_KEY=your_secret_key
+TMDB_API_KEY=your_tmdb_api_key
 ```
 
 ### Frontend
 
-Create `.env.local`
+Create `.env.local`.
 
-```
-NEXT_PUBLIC_API_URL=http://127.0.0.1:8000
+```env
+NEXT_PUBLIC_API_URL=http://127.0.0.1:8000/api
 ```
 
+For production, update this to your Railway backend URL.
 
 ---
 
-## 👩‍💻 Author
+## 🚀 Deployment
 
-**Ann Rose Paul**
-
-MCA Graduate
-
-GitHub:
-https://github.com/AnnRose20
+* **Frontend:** Vercel
+* **Backend:** Railway
+* **Database:** Railway MySQL
 
 ---
 
-## ⭐ Future Improvements
-
-- Email Notification from Contact Form
-- User Avatar Upload
-- Password Reset
-- Movie Reviews
-- Ratings
-- Watchlist
-- Dark/Light Theme
-- Deployment
